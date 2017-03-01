@@ -1,136 +1,136 @@
 *author : xinfe*   
 *date : 2017-02-27*
 ***
-# ¹ØÓÚJava Web(3)JavaµÄ·´Éä»úÖÆ
-### 1.·´Éä¸ÅÄî
-ÊÇÖ¸ÔÚÔËĞĞ×´Ì¬ÖĞ£¬¶ÔÓÚÈÎÒâÒ»¸öÀà£¬¶¼ÄÜ¹»ÖªµÀÕâ¸öÀàµÄËùÓĞÊôĞÔºÍ·½·¨£»
-¶ÔÓÚÈÎÒâÒ»¸ö¶ÔÏó£¬¶¼ÄÜ¹»µ÷ÓÃËüµÄÈÎÒâ·½·¨ºÍÊôĞÔ£»    
-·´Éä£¬Í¨Ë×µã½²£¬¾ÍÊÇ¿ÉÒÔ¸ù¾İÒ»¸öÀà£¬·Ö½â³öËüµÄËùÓĞ³ÉÔ±¡£    
+# å…³äºJava Web(3)Javaçš„åå°„æœºåˆ¶
+### 1. åå°„æ¦‚å¿µ
+æ˜¯æŒ‡åœ¨è¿è¡ŒçŠ¶æ€ä¸­ï¼Œå¯¹äºä»»æ„ä¸€ä¸ªç±»ï¼Œéƒ½èƒ½å¤ŸçŸ¥é“è¿™ä¸ªç±»çš„æ‰€æœ‰å±æ€§å’Œæ–¹æ³•ï¼›
+å¯¹äºä»»æ„ä¸€ä¸ªå¯¹è±¡ï¼Œéƒ½èƒ½å¤Ÿè°ƒç”¨å®ƒçš„ä»»æ„æ–¹æ³•å’Œå±æ€§ï¼›    
+åå°„ï¼Œé€šä¿—ç‚¹è®²ï¼Œå°±æ˜¯å¯ä»¥æ ¹æ®ä¸€ä¸ªç±»ï¼Œåˆ†è§£å‡ºå®ƒçš„æ‰€æœ‰æˆå‘˜ã€‚    
     
-¼ÙÉèÎÒÃÇÒÑ¾­ÓµÓĞÒ»¸öÀàcom.xinfe.User£¬´úÂëÈçÏÂ£º   
+å‡è®¾æˆ‘ä»¬å·²ç»æ‹¥æœ‰ä¸€ä¸ªç±»com.xinfe.Userï¼Œä»£ç å¦‚ä¸‹ï¼š   
 ```
 class User{
 
-	public String name;						//¹«ÓĞÊôĞÔ
-	private String psd;						//Ë½ÓĞÊôĞÔ
-	public static String TAG = "human";		//¾²Ì¬ÊôĞÔ
+	public String name;						//å…¬æœ‰å±æ€§
+	private String psd;						//ç§æœ‰å±æ€§
+	public static String TAG = "human";		//é™æ€å±æ€§
 	
-	public User(){							//ÎŞ²Î¹¹Ôìº¯Êı
+	public User(){							//æ— å‚æ„é€ å‡½æ•°
 		this.name = null;
 		this.psd = null;
 	}
 	
-	public User(String name,String psd){	//ÓĞ²Î¹¹Ôìº¯Êı
+	public User(String name,String psd){	//æœ‰å‚æ„é€ å‡½æ•°
 		this.name = name;
 		this.psd = psd;
 	}
 
-	public void setName(String name){		//Ò»°ã·½·¨£¬ÎŞ·µ»ØÖµ£¬º¬²ÎÊı
+	public void setName(String name){		//ä¸€èˆ¬æ–¹æ³•ï¼Œæ— è¿”å›å€¼ï¼Œå«å‚æ•°
 		this.name = name;
 	}
 	
-	public String getName(){				//Ò»°ã·½·¨£¬ÓĞ·µ»ØÖµ£¬²»º¬²ÎÊı
+	public String getName(){				//ä¸€èˆ¬æ–¹æ³•ï¼Œæœ‰è¿”å›å€¼ï¼Œä¸å«å‚æ•°
 		return name;
 	}
 	
-	private String getPsd(){				//Ë½ÓĞ·½·¨
+	private String getPsd(){				//ç§æœ‰æ–¹æ³•
 		return psd;
 	}
 	
-	public static String getTag(){			//¾²Ì¬·½·¨
+	public static String getTag(){			//é™æ€æ–¹æ³•
 		return TAG;
 	}
 	
 }
 ```
-ÏÂÃæÎÒÃÇ¸ù¾İÊµ¼ÊÀı×Ó½øĞĞÒ»Ğ©²Ù×÷£¬±ãÓÚÀí½â·´ÉäµÄ¸ÅÄîºÍÓÃ´¦¡£   
+ä¸‹é¢æˆ‘ä»¬æ ¹æ®å®é™…ä¾‹å­è¿›è¡Œä¸€äº›æ“ä½œï¼Œä¾¿äºç†è§£åå°„çš„æ¦‚å¿µå’Œç”¨å¤„ã€‚   
 
 
 
 
-### 2.¼ÓÔØÀà£¨ÈıÖÖ·½·¨£©
+### 2. åŠ è½½ç±»ï¼ˆä¸‰ç§æ–¹æ³•ï¼‰
 ```
-Class c1 = Class.forName("com.xinfe.User");	//µ÷ÓÃÀàClassµÄ¾²Ì¬·½·¨forName()£¬´«ÈëĞèÒª¼ÓÔØµÄÀàµÄÈ«³Æ£¬·µ»Ø¸ÃÀàµÄ×Ö½ÚÂë¡£´Ë·½·¨×î³£ÓÃ¡£
+Class c1 = Class.forName("com.xinfe.User");	//è°ƒç”¨ç±»Classçš„é™æ€æ–¹æ³•forName()ï¼Œä¼ å…¥éœ€è¦åŠ è½½çš„ç±»çš„å…¨ç§°ï¼Œè¿”å›è¯¥ç±»çš„å­—èŠ‚ç ã€‚æ­¤æ–¹æ³•æœ€å¸¸ç”¨ã€‚
 
-Class c2 = new User().getClass();			//µ÷ÓÃĞèÒª¼ÓÔØµÄÀàµÄÒ»¸öÊµÀıµÄgetClass()·½·¨£¬·µ»Ø¸ÃÀàµÄ×Ö½ÚÂë¡£
+Class c2 = new User().getClass();			//è°ƒç”¨éœ€è¦åŠ è½½çš„ç±»çš„ä¸€ä¸ªå®ä¾‹çš„getClass()æ–¹æ³•ï¼Œè¿”å›è¯¥ç±»çš„å­—èŠ‚ç ã€‚
 
-Class c3 = User.class;						//µ÷ÓÃĞèÒª¼ÓÔØµÄÀàµÄclassÊôĞÔ£¬·µ»Ø¸ÃÀàµÄ×Ö½ÚÂë¡£
+Class c3 = User.class;						//è°ƒç”¨éœ€è¦åŠ è½½çš„ç±»çš„classå±æ€§ï¼Œè¿”å›è¯¥ç±»çš„å­—èŠ‚ç ã€‚
 ```
 
 
 
 
-### 3.·´ÉäÀàµÄ¹¹Ôìº¯Êı
+### 3. åå°„ç±»çš„æ„é€ å‡½æ•°
 ```
-Class c = Class.forName("com.xinfe.User");						//¼ÓÔØÀà
+Class c = Class.forName("com.xinfe.User");						//åŠ è½½ç±»
 
-User user = (User)c.newIntance();								//´´½¨¶ÔÏó£¨Ç°ÌáÊÇ±ØĞëÓĞÎŞ²Î¹¹Ôìº¯Êı£©
+User user = (User)c.newIntance();								//åˆ›å»ºå¯¹è±¡ï¼ˆå‰ææ˜¯å¿…é¡»æœ‰æ— å‚æ„é€ å‡½æ•°ï¼‰
 
-Constructor con1 = c.getConstructor(String.class,String.class);	//²ÎÊı±íÊ¾µ÷ÓÃÓĞ²Î¹¹Ôìº¯ÊıÊ±ĞèÒª´«ÈëµÄ²ÎÊıµÄÀàĞÍµÄ×Ö½ÚÂë
-User user1 = (User)con1.newInstance("user1","user1");			//²ÎÊı±íÊ¾µ÷ÓÃÓĞ²Î¹¹Ôìº¯ÊıÊ±ĞèÒª´«ÈëµÄÊµ¼Ê²ÎÊı
+Constructor con1 = c.getConstructor(String.class,String.class);	//å‚æ•°è¡¨ç¤ºè°ƒç”¨æœ‰å‚æ„é€ å‡½æ•°æ—¶éœ€è¦ä¼ å…¥çš„å‚æ•°çš„ç±»å‹çš„å­—èŠ‚ç 
+User user1 = (User)con1.newInstance("user1","user1");			//å‚æ•°è¡¨ç¤ºè°ƒç”¨æœ‰å‚æ„é€ å‡½æ•°æ—¶éœ€è¦ä¼ å…¥çš„å®é™…å‚æ•°
 ```
-Ïà¹ØAPIÎÄµµ£º      
+ç›¸å…³APIæ–‡æ¡£ï¼š      
 ![getConstructor.jpg](https://ooo.0o0.ooo/2017/02/27/58b41b4a24382.jpg)
 
 
 
 
 
-### 4.·´ÉäÀàµÄ·½·¨
+### 4. åå°„ç±»çš„æ–¹æ³•
 ```
-Class c = Class.forName("com.xinfe.User");				//¼ÓÔØÀà
+Class c = Class.forName("com.xinfe.User");				//åŠ è½½ç±»
 
-User user = (User)c.newIntance();						//´´½¨¶ÔÏó
+User user = (User)c.newIntance();						//åˆ›å»ºå¯¹è±¡
 
-Method method1 = c.getMethod("setName",String.class);	//²ÎÊıÒ»£º·½·¨Ãû£¨±íÊ¾µ÷ÓÃÄÄ¸ö·½·¨£©£»²ÎÊı¶ş£º²ÎÊıÀàĞÍµÄ×Ö½ÚÂë
-method1.invoke(user,"user2");							//²ÎÊıÒ»£º¶ÔÏó£¨±íÊ¾µ÷ÓÃ¸Ã¶ÔÏóµÄ·½·¨£©£»²ÎÊı¶ş£ºÊµ¼Ê²ÎÊı
+Method method1 = c.getMethod("setName",String.class);	//å‚æ•°ä¸€ï¼šæ–¹æ³•åï¼ˆè¡¨ç¤ºè°ƒç”¨å“ªä¸ªæ–¹æ³•ï¼‰ï¼›å‚æ•°äºŒï¼šå‚æ•°ç±»å‹çš„å­—èŠ‚ç 
+method1.invoke(user,"user2");							//å‚æ•°ä¸€ï¼šå¯¹è±¡ï¼ˆè¡¨ç¤ºè°ƒç”¨è¯¥å¯¹è±¡çš„æ–¹æ³•ï¼‰ï¼›å‚æ•°äºŒï¼šå®é™…å‚æ•°
 
-Method method2 = c.getMethod("getName",null);			//²ÎÊı±íÊ¾µ÷ÓÃgetName()·½·¨£¬²»ĞèÒª²ÎÊı
-String name = (String)method2.invoke(user,null);		//²ÎÊı±íÊ¾µ÷ÓÃÊµÀıuserµÄgetName()·½·¨£¬²»ĞèÒª²ÎÊı¡£Ç¿×ª»ñµÃ·µ»ØÖµ
+Method method2 = c.getMethod("getName",null);			//å‚æ•°è¡¨ç¤ºè°ƒç”¨getName()æ–¹æ³•ï¼Œä¸éœ€è¦å‚æ•°
+String name = (String)method2.invoke(user,null);		//å‚æ•°è¡¨ç¤ºè°ƒç”¨å®ä¾‹userçš„getName()æ–¹æ³•ï¼Œä¸éœ€è¦å‚æ•°ã€‚å¼ºè½¬è·å¾—è¿”å›å€¼
 
-Method method3 = c.getDeclaredMethod("getPsd",null);	//²ÎÊı±íÊ¾µ÷ÓÃË½ÓĞgetPsd()·½·¨£¬²»ĞèÒª²ÎÊı
-method3.setAccessable(true);							//ÉèÖÃ¸Ã·½·¨µÄ¿É¼ûĞÔ£¨ÒòÎª¸Ã·½·¨ÊÇË½ÓĞµÄ£©ÆÆ»·ÁË°²È«ĞÔ
-String psd = (String)method3.invoke(user,null);			//²ÎÊı±íÊ¾µ÷ÓÃÊµÀıuserµÄgetPsd()·½·¨£¬²»ĞèÒª²ÎÊı¡£Ç¿×ª»ñµÃ·µ»ØÖµ
+Method method3 = c.getDeclaredMethod("getPsd",null);	//å‚æ•°è¡¨ç¤ºè°ƒç”¨ç§æœ‰getPsd()æ–¹æ³•ï¼Œä¸éœ€è¦å‚æ•°
+method3.setAccessable(true);							//è®¾ç½®è¯¥æ–¹æ³•çš„å¯è§æ€§ï¼ˆå› ä¸ºè¯¥æ–¹æ³•æ˜¯ç§æœ‰çš„ï¼‰ç ´ç¯äº†å®‰å…¨æ€§
+String psd = (String)method3.invoke(user,null);			//å‚æ•°è¡¨ç¤ºè°ƒç”¨å®ä¾‹userçš„getPsd()æ–¹æ³•ï¼Œä¸éœ€è¦å‚æ•°ã€‚å¼ºè½¬è·å¾—è¿”å›å€¼
 
-Method method4 = c.getMethod("getTag",null);			//²ÎÊı±íÊ¾µ÷ÓÃ¾²Ì¬getTag()·½·¨£¬²»ĞèÒª²ÎÊı
-String tag = (String)method4.invoke(null,null);			//²ÎÊı±íÊ¾²»ĞèÒª´«ÈëÊµÀı(´«Ò²ĞĞ)£¬²»ĞèÒª²ÎÊı¡£Ç¿×ª»ñµÃ·µ»ØÖµ
+Method method4 = c.getMethod("getTag",null);			//å‚æ•°è¡¨ç¤ºè°ƒç”¨é™æ€getTag()æ–¹æ³•ï¼Œä¸éœ€è¦å‚æ•°
+String tag = (String)method4.invoke(null,null);			//å‚æ•°è¡¨ç¤ºä¸éœ€è¦ä¼ å…¥å®ä¾‹(ä¼ ä¹Ÿè¡Œ)ï¼Œä¸éœ€è¦å‚æ•°ã€‚å¼ºè½¬è·å¾—è¿”å›å€¼
 
 ```
-Ïà¹ØAPIÎÄµµ£º   
+ç›¸å…³APIæ–‡æ¡£ï¼š   
 ![getMethod.jpg](https://ooo.0o0.ooo/2017/02/27/58b425219da13.jpg)
 
 
 
-### 5.·´ÉäÀàµÄ×Ö¶Î
+### 5. åå°„ç±»çš„å­—æ®µ
 ```
-Class c = Class.forName("com.xinfe.User");		//¼ÓÔØÀà
+Class c = Class.forName("com.xinfe.User");		//åŠ è½½ç±»
 
-User user = (User)c.newInstance();				//´´½¨ÊµÀı
+User user = (User)c.newInstance();				//åˆ›å»ºå®ä¾‹
 
-Field field1 = c.getField("name");				//²ÎÊı±íÊ¾»ñÈ¡ÄÄÒ»¸ö×Ö¶Î
+Field field1 = c.getField("name");				//å‚æ•°è¡¨ç¤ºè·å–å“ªä¸€ä¸ªå­—æ®µ
 
-Object value = field1.get(user);				//»ñÈ¡¸Ã×Ö¶ÎµÄÖµ£¬²ÎÊı±íÊ¾¾ßÌåÊµÀı£¬·µ»ØÀàĞÍÎªObject
-Class type = field1.getType();					//»ñÈ¡¸Ã×Ö¶ÎµÄÀàĞÍ,·µ»ØÀàĞÍÎªClass
+Object value = field1.get(user);				//è·å–è¯¥å­—æ®µçš„å€¼ï¼Œå‚æ•°è¡¨ç¤ºå…·ä½“å®ä¾‹ï¼Œè¿”å›ç±»å‹ä¸ºObject
+Class type = field1.getType();					//è·å–è¯¥å­—æ®µçš„ç±»å‹,è¿”å›ç±»å‹ä¸ºClass
 
-if(type.equals(String.class)){					//ÅĞ¶Ï×Ö¶ÎµÄÀàĞÍÊÇ·ñÎªString
-	String name = (String)value;				//ÊÇÔòÇ¿×ª
+if(type.equals(String.class)){					//åˆ¤æ–­å­—æ®µçš„ç±»å‹æ˜¯å¦ä¸ºString
+	String name = (String)value;				//æ˜¯åˆ™å¼ºè½¬
 }
 
 
-Field field2 = c.getDeclaredField("psd");		//×¢Òâ¸Ã×Ö¶ÎÎªË½ÓĞµÄ
-field2.setAccessable(true);						//ÉèÖÃ¿É¼ûĞÔ
-String psd = (String)field2.get(user);			//»ñÈ¡×Ö¶ÎÖµ
+Field field2 = c.getDeclaredField("psd");		//æ³¨æ„è¯¥å­—æ®µä¸ºç§æœ‰çš„
+field2.setAccessable(true);						//è®¾ç½®å¯è§æ€§
+String psd = (String)field2.get(user);			//è·å–å­—æ®µå€¼
 ```
-Ïà¹ØAPIÎÄµµ£º   
+ç›¸å…³APIæ–‡æ¡£ï¼š   
 ![getField.jpg](https://ooo.0o0.ooo/2017/02/27/58b42d631f531.jpg)
 
-### 6. ·´ÉäµÄ×÷ÓÃ
-´ó¼Ò¶¼ÖªµÀ£¬³ÌĞòĞèÒªÏÈ±àÒë²ÅÄÜÔËĞĞ¡£   
-java·´ÉäÈ´ÄÜÊµÏÖÔÚÔËĞĞÊ±ÆÚ¶¯Ì¬¼ÓÔØÀà£¬»ñÖªËüµÄÊôĞÔºÍ·½·¨¡£¼´ÄÇ¸ö±»¼ÓÔØµÄÀàÃ»ÓĞÊÂÏÈ±àÒë¹ı¡£   
-ÏÖÔÚÖ»ÄÜÀí½âµ½Õâ¶ù£¬¶¼Ëµ·´ÉäÒ»°ãÓÃÓÚ¿ò¼Ü£¬µÈÒÔºóÓöµ½ÁËÓ¦¸Ã»¹ÄÜ½áºÏÀı×ÓÉîÈëÀí½â¡£    
+### 6. åå°„çš„ä½œç”¨
+å¤§å®¶éƒ½çŸ¥é“ï¼Œç¨‹åºéœ€è¦å…ˆç¼–è¯‘æ‰èƒ½è¿è¡Œã€‚   
+javaåå°„å´èƒ½å®ç°åœ¨è¿è¡Œæ—¶æœŸåŠ¨æ€åŠ è½½ç±»ï¼Œè·çŸ¥å®ƒçš„å±æ€§å’Œæ–¹æ³•ã€‚å³é‚£ä¸ªè¢«åŠ è½½çš„ç±»æ²¡æœ‰äº‹å…ˆç¼–è¯‘è¿‡ã€‚   
+ç°åœ¨åªèƒ½ç†è§£åˆ°è¿™å„¿ï¼Œéƒ½è¯´åå°„ä¸€èˆ¬ç”¨äºæ¡†æ¶ï¼Œç­‰ä»¥åé‡åˆ°äº†åº”è¯¥è¿˜èƒ½ç»“åˆä¾‹å­æ·±å…¥ç†è§£ã€‚    
 
 
-### ²Î¿¼×ÊÁÏ
-[SegmentFault - java·´Éä»úÖÆ×÷ÓÃ](https://segmentfault.com/q/1010000000315618)   
-[CSDN - ·´ÉäÔÚJAVAÆğµ½µÄ×÷ÓÃ](http://bbs.csdn.net/topics/320106718)      
+### å‚è€ƒèµ„æ–™
+[SegmentFault - javaåå°„æœºåˆ¶ä½œç”¨](https://segmentfault.com/q/1010000000315618)   
+[CSDN - åå°„åœ¨JAVAèµ·åˆ°çš„ä½œç”¨](http://bbs.csdn.net/topics/320106718)      
 ***
