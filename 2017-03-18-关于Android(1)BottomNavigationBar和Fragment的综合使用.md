@@ -1,22 +1,22 @@
 *author : xinfe*   
 *date : 2017-03-18*
 ***
-# ¹ØÓÚAndroid(1)BottomNavigationBarºÍFragmentµÄ×ÛºÏÊ¹ÓÃ
+# å…³äºAndroid(1)BottomNavigationBarå’ŒFragmentçš„ç»¼åˆä½¿ç”¨
 
-### Ò»¡¢ÏÂÔØ
-Ö±½ÓÔÚgradleÖĞ×¥È¡£º
+### ä¸€ã€ä¸‹è½½
+ç›´æ¥åœ¨gradleä¸­æŠ“å–ï¼š
 ![grab.PNG](https://ooo.0o0.ooo/2017/03/18/58cc99ec7dbba.png)  
 
 
-### ¶ş¡¢Ê¹ÓÃ([Usage](https://github.com/Ashok-Varma/BottomNavigation/wiki/Usage))
+### äºŒã€ä½¿ç”¨([Usage](https://github.com/Ashok-Varma/BottomNavigation/wiki/Usage))
 
-**ÔÚ²¼¾ÖÎÄ¼şÖĞĞ´Èë£º**    
-![xmlÖĞµÄÊ¹ÓÃ.PNG](https://ooo.0o0.ooo/2017/03/18/58ccba779c1c4.png)   
+**åœ¨å¸ƒå±€æ–‡ä»¶ä¸­å†™å…¥ï¼š**    
+![xmlä¸­çš„ä½¿ç”¨.PNG](https://ooo.0o0.ooo/2017/03/18/58ccba779c1c4.png)   
 
-**ÔÚActivityÖĞĞ´Èë£º**    
-![activityÖĞµÄÊ¹ÓÃ.PNG](https://ooo.0o0.ooo/2017/03/18/58ccbaaa1fb62.png)   
+**åœ¨Activityä¸­å†™å…¥ï¼š**    
+![activityä¸­çš„ä½¿ç”¨.PNG](https://ooo.0o0.ooo/2017/03/18/58ccbaaa1fb62.png)   
  
-**Ò²¿ÉÎªÃ¿¸ötab¶¼ÉèÖÃ¡°Ñ¡ÖĞ¡±¡°Î´Ñ¡ÖĞ¡±µÄÑÕÉ«£º**   
+**ä¹Ÿå¯ä¸ºæ¯ä¸ªtabéƒ½è®¾ç½®â€œé€‰ä¸­â€â€œæœªé€‰ä¸­â€çš„é¢œè‰²ï¼š**   
 ```
 bottomNavigationBar
     .addItem(new BottomNavigationItem(R.drawable.ic_home_white_24dp, "Home").setActiveColor(R.color.orange).setInActiveColor(R.color.teal))
@@ -26,14 +26,14 @@ bottomNavigationBar
     .addItem(new BottomNavigationItem(R.drawable.ic_videogame_asset_white_24dp, "Games").setActiveColor(R.color.grey))
 ```
 
-**Ò²¿ÉÉèÖÃ²»Í¬µÄÍ¼Æ¬(¼´Î´µã»÷Ê±ÊÇÒ»ÖÖÍ¼Æ¬£¬µã»÷Ö®ºóÊÇÁíÒ»ÖÖÍ¼Æ¬)**    
+**ä¹Ÿå¯è®¾ç½®ä¸åŒçš„å›¾ç‰‡(å³æœªç‚¹å‡»æ—¶æ˜¯ä¸€ç§å›¾ç‰‡ï¼Œç‚¹å‡»ä¹‹åæ˜¯å¦ä¸€ç§å›¾ç‰‡)**    
 ```
 new BottomNavigationItem(R.drawable.ic_home_white_24dp, "Home").setInactiveIcon(R.drawable.ic_home_black)
 ```
 
 
 
-### Èı¡¢ÊµÀı
+### ä¸‰ã€å®ä¾‹
 **activity_main.xml**
 ![layout.PNG](https://ooo.0o0.ooo/2017/03/18/58ccbad8ca519.png)
 
@@ -67,16 +67,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
 
         bottomNavigationBar
-		// Values:MODE_DEFAULT, MODE_FIXED, MODE_SHIFTING(ÒÆÎ»)
+		// Values:MODE_DEFAULT, MODE_FIXED, MODE_SHIFTING(ç§»ä½)
                 .setMode(BottomNavigationBar.MODE_FIXED)   
-		//Values: BACKGROUND_STYLE_DEFAULT, BACKGROUND_STYLE_STATIC, BACKGROUND_STYLE_RIPPLE(²¨ÎÆ)
+		//Values: BACKGROUND_STYLE_DEFAULT, BACKGROUND_STYLE_STATIC, BACKGROUND_STYLE_RIPPLE(æ³¢çº¹)
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
-                .setActiveColor(R.color.colorPrimary)       //Ñ¡ÖĞÊ±tabµÄÑÕÉ«
-                .setInActiveColor(R.color.Black)            //Î´Ñ¡ÖĞÊ±tabµÄÑÕÉ«
-                .setBarBackgroundColor(R.color.White)       //±³¾°ÑÕÉ«
-                .addItem(new BottomNavigationItem(R.drawable.ic_home_white_24dp, "Ê×Ò³"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_add_white_24dp, "Ìí¼Ó"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_me_white_24dp, "ÎÒµÄ"))
+                .setActiveColor(R.color.colorPrimary)       //é€‰ä¸­æ—¶tabçš„é¢œè‰²
+                .setInActiveColor(R.color.Black)            //æœªé€‰ä¸­æ—¶tabçš„é¢œè‰²
+                .setBarBackgroundColor(R.color.White)       //èƒŒæ™¯é¢œè‰²
+                .addItem(new BottomNavigationItem(R.drawable.ic_home_white_24dp, "é¦–é¡µ"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_add_white_24dp, "æ·»åŠ "))
+                .addItem(new BottomNavigationItem(R.drawable.ic_me_white_24dp, "æˆ‘çš„"))
                 .initialise();
         bottomNavigationBar.setTabSelectedListener(this);
         setDefaultFragment();
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
     }
 
-    //ÉèÖÃÄ¬ÈÏÏÔÊ¾µÄfragment
+    //è®¾ç½®é»˜è®¤æ˜¾ç¤ºçš„fragment
     private void setDefaultFragment(){
         Log.d("shiyu", MainActivity.TAG+"setDefaultFragment");
         FragmentManager fm = getFragmentManager();
@@ -135,45 +135,46 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
 ```
 
-### ËÄ¡¢×¢Òâ   
-**v4°üÏÂÖ§³ÖµÄFragmentºÍapp°üÏÂµÄFragment**   
+### å››ã€æ³¨æ„   
+**v4åŒ…ä¸‹æ”¯æŒçš„Fragmentå’ŒappåŒ…ä¸‹çš„Fragment**   
 
-v4°üµÄFragmentManager:
+v4åŒ…çš„FragmentManager:
 ```
-//3.0ÒÔÏÂ°æ±¾Ã»ÓĞfragmentµÄapi,±ØĞë½èÖúV4°üÀïÃæµÄgetSupportFragmentManager()·½·¨À´»ñÈ¡FragmentManager()¶ÔÏó¡£
-//¶øÇÒgetSupportFragmentManager()ÓĞÆäÔËÓÃ·¶Î§£¬Ö»ÄÜÔÚ²¿·ÖactivityÖĞÔËÓÃ¡£
-//µ±Óöµ½getSupportFragmentManager()Ã»¶¨ÒåµÄÎÊÌâÊ±£¬ĞŞ¸ÄactivityÎªFragmentActivity»òÕßAppCompatActivity¡£
+//3.0ä»¥ä¸‹ç‰ˆæœ¬æ²¡æœ‰fragmentçš„api,å¿…é¡»å€ŸåŠ©V4åŒ…é‡Œé¢çš„getSupportFragmentManager()æ–¹æ³•æ¥è·å–FragmentManager()å¯¹è±¡ã€‚
+//è€Œä¸”getSupportFragmentManager()æœ‰å…¶è¿ç”¨èŒƒå›´ï¼Œåªèƒ½åœ¨éƒ¨åˆ†activityä¸­è¿ç”¨ã€‚
+//å½“é‡åˆ°getSupportFragmentManager()æ²¡å®šä¹‰çš„é—®é¢˜æ—¶ï¼Œä¿®æ”¹activityä¸ºFragmentActivityæˆ–è€…AppCompatActivityã€‚
 
 FragmentManager fragmentManager = getSupportFragmentManager();
 ```
-app°üÏÂFragmentManager:
+appåŒ…ä¸‹FragmentManager:
 ``` 
-//3.0°æ±¾Ö®ºó£¬ÓĞÁËFragmentµÄapi£¬¾Í¿ÉÒÔÖ±½ÓÊ¹ÓÃgetFragmentManager()Õâ¸ö·½·¨À´»ñÈ¡ÁË
+//3.0ç‰ˆæœ¬ä¹‹åï¼Œæœ‰äº†Fragmentçš„apiï¼Œå°±å¯ä»¥ç›´æ¥ä½¿ç”¨getFragmentManager()è¿™ä¸ªæ–¹æ³•æ¥è·å–äº†
 
 Fragmentmanager fragmentManager = getFragmentManager();
 ```
 
-**FragmentµÄreplace()ºÍhide(),add(),show()**   
+**Fragmentçš„replace()å’Œhide(),add(),show()**   
 
-ÔÚÏîÄ¿ÖĞÇĞ»»Fragment£¬Ò»Ö±¶¼ÊÇÓÃreplace()·½·¨À´Ìæ»»Fragment¡£
-µ«ÊÇÕâÑù×öÓĞÒ»¸öÎÊÌâ£¬Ã¿´ÎÇĞ»»µÄÊ±ºòFragment¶¼»áÖØĞÂÊµÁĞ»¯£¬ÖØĞÂ¼ÓÔØÒ»´ÎÊı¾İ£¬ÕâÑù×ö»á·Ç³£ÏûºÄĞÔÄÜºÍÓÃ»§µÄÁ÷Á¿¡£   
+åœ¨é¡¹ç›®ä¸­åˆ‡æ¢Fragmentï¼Œä¸€ç›´éƒ½æ˜¯ç”¨replace()æ–¹æ³•æ¥æ›¿æ¢Fragmentã€‚
+ä½†æ˜¯è¿™æ ·åšæœ‰ä¸€ä¸ªé—®é¢˜ï¼Œæ¯æ¬¡åˆ‡æ¢çš„æ—¶å€™Fragmentéƒ½ä¼šé‡æ–°å®åˆ—åŒ–ï¼Œé‡æ–°åŠ è½½ä¸€æ¬¡æ•°æ®ï¼Œè¿™æ ·åšä¼šéå¸¸æ¶ˆè€—æ€§èƒ½å’Œç”¨æˆ·çš„æµé‡ã€‚   
 
-¹Ù·½ÎÄµµ½âÊÍËµ£ºreplace()Õâ¸ö·½·¨Ö»ÊÇÔÚÉÏÒ»¸öFragment²»ÔÙĞèÒªÊ±²ÉÓÃµÄ¼ò±ã·½·¨¡£   
-½ÏºÃµÄÇĞ»»·½·¨ÊÇÊ¹ÓÃhide,add,show·½·¨¡£   
+å®˜æ–¹æ–‡æ¡£è§£é‡Šè¯´ï¼šreplace()è¿™ä¸ªæ–¹æ³•åªæ˜¯åœ¨ä¸Šä¸€ä¸ªFragmentä¸å†éœ€è¦æ—¶é‡‡ç”¨çš„ç®€ä¾¿æ–¹æ³•ã€‚   
+è¾ƒå¥½çš„åˆ‡æ¢æ–¹æ³•æ˜¯ä½¿ç”¨hide,add,showæ–¹æ³•ã€‚   
 
-Ë¼Â·ÊÇ£ºµã»÷Ò»¸ö°´Å¥£¬ÒªÏÔÊ¾Ä³¸öfragmentÊ±£¬
-Ê×ÏÈÅĞ¶Ï¸ÃfragmentÊÇ·ñÒÑ¾­add¹ı£¬
-Èç¹ûÃ»ÓĞadd£¬Ôòhideµ±Ç°fragment£¬add¸Ãfragment£¬
-ÒÑ¾­add¹ı£¬±íÃ÷ÒÑ¾­´æÔÚ¸ÃfragmentÊµÀı£¬Ö»Ğèhideµ±Ç°ÏÔÊ¾µÄfragment£¬show´Ëfragment¡£
-ÕâÑù¾ÍÄÜ×öµ½¶à¸öFragmentÇĞ»»²»ÖØĞÂÊµÀı»¯£¬µ«µ±ÄÚ´æ²»×ãÊ±Ò²»áÔì³É½çÃæÖØµşÎÊÌâ¡£   
+æ€è·¯æ˜¯ï¼šç‚¹å‡»ä¸€ä¸ªæŒ‰é’®ï¼Œè¦æ˜¾ç¤ºæŸä¸ªfragmentæ—¶ï¼Œ
+é¦–å…ˆåˆ¤æ–­è¯¥fragmentæ˜¯å¦å·²ç»addè¿‡ï¼Œ
+å¦‚æœæ²¡æœ‰addï¼Œåˆ™hideå½“å‰fragmentï¼Œaddè¯¥fragmentï¼Œ
+å·²ç»addè¿‡ï¼Œè¡¨æ˜å·²ç»å­˜åœ¨è¯¥fragmentå®ä¾‹ï¼Œåªéœ€hideå½“å‰æ˜¾ç¤ºçš„fragmentï¼Œshowæ­¤fragmentã€‚
+è¿™æ ·å°±èƒ½åšåˆ°å¤šä¸ªFragmentåˆ‡æ¢ä¸é‡æ–°å®ä¾‹åŒ–ï¼Œä½†å½“å†…å­˜ä¸è¶³æ—¶ä¹Ÿä¼šé€ æˆç•Œé¢é‡å é—®é¢˜ã€‚   
+![switchFragment.PNG](https://ooo.0o0.ooo/2017/03/19/58ce36dee0ffa.png)
 
-**ÄÚ´æ²»×ãFragment½çÃæÖØµşµÄ½â¾ö°ì·¨£º**
-- ×´Ì¬¼ì²â£º[Android FramentµÄÇĞ»»£¨½â¾öreplaceµÄµÍĞ§£©](http://www.cnblogs.com/android-joker/p/4414891.html) [ fragment½çÃæÖØµşÎÊÌâµÄÖÕ¼«½â¾ö·½·¨ ](http://blog.csdn.net/fussenyu/article/details/51283282)
-- ×èÖ¹Êı¾İ»Ø¹ö£º[ fragmentÖØµşÎÊÌâ£¨add hide show·½Ê½£©](http://blog.csdn.net/fly7632785/article/details/48295741)
+**å†…å­˜ä¸è¶³Fragmentç•Œé¢é‡å çš„è§£å†³åŠæ³•ï¼š**
+- çŠ¶æ€æ£€æµ‹ï¼š[Android Framentçš„åˆ‡æ¢ï¼ˆè§£å†³replaceçš„ä½æ•ˆï¼‰](http://www.cnblogs.com/android-joker/p/4414891.html) [ fragmentç•Œé¢é‡å é—®é¢˜çš„ç»ˆæè§£å†³æ–¹æ³• ](http://blog.csdn.net/fussenyu/article/details/51283282)
+- é˜»æ­¢æ•°æ®å›æ»šï¼š[ fragmenté‡å é—®é¢˜ï¼ˆadd hide showæ–¹å¼ï¼‰](http://blog.csdn.net/fly7632785/article/details/48295741)
 
 
 
-### ²Î¿¼×ÊÁÏ
+### å‚è€ƒèµ„æ–™
 [Github - BottomNavigation](https://github.com/Ashok-Varma/BottomNavigation)   
 [Bottom navigation - Components - Material design guidelines](https://material.io/guidelines/components/bottom-navigation.html#bottom-navigation-specs)
 ***
