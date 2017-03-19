@@ -62,12 +62,12 @@ Class c3 = User.class;				//调用需要加载的类的class属性，返回该�
 
 ### 3. 反射类的构造函数
 ```java
-Class c = Class.forName("com.xinfe.User");				//加载类
+Class c = Class.forName("com.xinfe.User");			//加载类
 
-User user = (User)c.newIntance();					//创建对象（前提是必须有无参构造函数）
+User user = (User)c.newIntance();				//创建对象（前提是必须有无参构造函数）
 
-Constructor con1 = c.getConstructor(String.class,String.class);		//参数表示调用有参构造函数时需要传入的参数的类型的字节码
-User user1 = (User)con1.newInstance("user1","user1");			//参数表示调用有参构造函数时需要传入的实际参数
+Constructor con1 = c.getConstructor(String.class,String.class);	//参数表示调用有参构造函数时需要传入的参数的类型的字节码
+User user1 = (User)con1.newInstance("user1","user1");		//参数表示调用有参构造函数时需要传入的实际参数
 ```
 相关API文档：      
 ![getConstructor.jpg](https://ooo.0o0.ooo/2017/02/27/58b41b4a24382.jpg)
@@ -78,22 +78,22 @@ User user1 = (User)con1.newInstance("user1","user1");			//参数表示调用有�
 
 ### 4. 反射类的方法
 ```java
-Class c = Class.forName("com.xinfe.User");			//加载类
+Class c = Class.forName("com.xinfe.User");		//加载类
 
-User user = (User)c.newIntance();				//创建对象
+User user = (User)c.newIntance();			//创建对象
 
-Method method1 = c.getMethod("setName",String.class);		//参数一：方法名（表示调用哪个方法）；参数二：参数类型的字节码
-method1.invoke(user,"user2");					//参数一：对象（表示调用该对象的方法）；参数二：实际参数
+Method method1 = c.getMethod("setName",String.class);	//参数一：方法名（表示调用哪个方法）；参数二：参数类型的字节码
+method1.invoke(user,"user2");				//参数一：对象（表示调用该对象的方法）；参数二：实际参数
 
-Method method2 = c.getMethod("getName",null);			//参数表示调用getName()方法，不需要参数
-String name = (String)method2.invoke(user,null);		//参数表示调用实例user的getName()方法，不需要参数。强转获得返回值
+Method method2 = c.getMethod("getName",null);		//参数表示调用getName()方法，不需要参数
+String name = (String)method2.invoke(user,null);	//参数表示调用实例user的getName()方法，不需要参数。强转获得返回值
 
-Method method3 = c.getDeclaredMethod("getPsd",null);		//参数表示调用私有getPsd()方法，不需要参数
-method3.setAccessable(true);					//设置该方法的可见性（因为该方法是私有的）破环了安全性
-String psd = (String)method3.invoke(user,null);			//参数表示调用实例user的getPsd()方法，不需要参数。强转获得返回值
+Method method3 = c.getDeclaredMethod("getPsd",null);	//参数表示调用私有getPsd()方法，不需要参数
+method3.setAccessable(true);				//设置该方法的可见性（因为该方法是私有的）破环了安全性
+String psd = (String)method3.invoke(user,null);		//参数表示调用实例user的getPsd()方法，不需要参数。强转获得返回值
 
-Method method4 = c.getMethod("getTag",null);			//参数表示调用静态getTag()方法，不需要参数
-String tag = (String)method4.invoke(null,null);			//参数表示不需要传入实例(传也行)，不需要参数。强转获得返回值
+Method method4 = c.getMethod("getTag",null);		//参数表示调用静态getTag()方法，不需要参数
+String tag = (String)method4.invoke(null,null);		//参数表示不需要传入实例(传也行)，不需要参数。强转获得返回值
 
 ```
 相关API文档：   
@@ -103,23 +103,23 @@ String tag = (String)method4.invoke(null,null);			//参数表示不需要传入�
 
 ### 5. 反射类的字段
 ```java
-Class c = Class.forName("com.xinfe.User");			//加载类
+Class c = Class.forName("com.xinfe.User");		//加载类
 
-User user = (User)c.newInstance();				//创建实例
+User user = (User)c.newInstance();			//创建实例
 
-Field field1 = c.getField("name");				//参数表示获取哪一个字段
+Field field1 = c.getField("name");			//参数表示获取哪一个字段
 
-Object value = field1.get(user);				//获取该字段的值，参数表示具体实例，返回类型为Object
-Class type = field1.getType();					//获取该字段的类型,返回类型为Class
+Object value = field1.get(user);			//获取该字段的值，参数表示具体实例，返回类型为Object
+Class type = field1.getType();				//获取该字段的类型,返回类型为Class
 
-if(type.equals(String.class)){					//判断字段的类型是否为String
-	String name = (String)value;				//是则强转
+if(type.equals(String.class)){				//判断字段的类型是否为String
+	String name = (String)value;			//是则强转
 }
 
 
-Field field2 = c.getDeclaredField("psd");			//注意该字段为私有的
-field2.setAccessable(true);					//设置可见性
-String psd = (String)field2.get(user);				//获取字段值
+Field field2 = c.getDeclaredField("psd");		//注意该字段为私有的
+field2.setAccessable(true);				//设置可见性
+String psd = (String)field2.get(user);			//获取字段值
 ```
 相关API文档：   
 ![getField.jpg](https://ooo.0o0.ooo/2017/02/27/58b42d631f531.jpg)
@@ -131,6 +131,6 @@ java反射却能实现在运行时期动态加载类，获知它的属性和方�
 
 
 ### 参考资料
-[SegmentFault - java反射机制作用](https://segmentfault.com/q/1010000000315618)   
-[CSDN - 反射在JAVA起到的作用](http://bbs.csdn.net/topics/320106718)      
+- [SegmentFault - java反射机制作用](https://segmentfault.com/q/1010000000315618)   
+- [CSDN - 反射在JAVA起到的作用](http://bbs.csdn.net/topics/320106718)      
 ***
