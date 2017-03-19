@@ -1,22 +1,22 @@
 *author : xinfe*   
 *date : 2017-03-19*
 ***
-# ¹ØÓÚAndroid(2)toolbarµÄÊ¹ÓÃ
+# å…³äºAndroid(2)toolbarçš„ä½¿ç”¨
 
 
-### Ò»¡¢»ù±¾Ê¹ÓÃ
-1. Ê¹ÓÃ toolbar µÄ Activity ĞèÒª¼Ì³Ğ AppCompatActivity¡£
-2. ÔÚ AndroidManifest.xml ÖĞ£¬½« application ±êÇ©µÄ theme ÉèÖÃÎª NoActionBar ¡£
+### ä¸€ã€åŸºæœ¬ä½¿ç”¨
+1. ä½¿ç”¨ toolbar çš„ Activity éœ€è¦ç»§æ‰¿ AppCompatActivityã€‚
+2. åœ¨ AndroidManifest.xml ä¸­ï¼Œå°† application æ ‡ç­¾çš„ theme è®¾ç½®ä¸º NoActionBar ã€‚
 	```
 	<application
 		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     />
 	```
 	
-	»òÕßÔÚ styles.xml ÖĞÉèÖÃ parent £º   
+	æˆ–è€…åœ¨ styles.xml ä¸­è®¾ç½® parent ï¼š   
 	![style.PNG](https://ooo.0o0.ooo/2017/03/19/58ce3a423b53f.png)   
 	
-3. Îª Activity µÄ²¼¾ÖÔö¼ÓÒÔÏÂÄÚÈİ£º
+3. ä¸º Activity çš„å¸ƒå±€å¢åŠ ä»¥ä¸‹å†…å®¹ï¼š
 	```
 	<android.support.v7.widget.Toolbar
 		android:id="@+id/my_toolbar"
@@ -28,8 +28,8 @@
 		app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 	```
 	
-4. ÔÚ Activity ÖĞÔö¼ÓÒÔÏÂ´úÂë£º
-	```
+4. åœ¨ Activity ä¸­å¢åŠ ä»¥ä¸‹ä»£ç ï¼š
+	```java
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,46 +39,148 @@
     }
 	```
 	
-5. ÕâÑù±ãÄÜÏÔÊ¾×î»ù´¡µÄtoolbar¡££¨´øÓĞapp name£¬±³¾°ÑÕÉ«ÎªcolorPrimary£©
+5. è¿™æ ·ä¾¿èƒ½æ˜¾ç¤ºæœ€åŸºç¡€çš„toolbarã€‚ï¼ˆå¸¦æœ‰app nameï¼ŒèƒŒæ™¯é¢œè‰²ä¸ºcolorPrimaryï¼‰
 
 
-### ¶ş¡¢Îª toolbar Ôö¼ÓÒ»¸ö·µ»Ø°´Å¥
-1. Ê×ÏÈÒªÓĞÒ»¸ö parentActivity £¨ÕâÑù°´ÁË·µ»Ø°´Å¥²ÅÓĞÈ¥´¦£©¡£   
+### äºŒã€ä¸º toolbar å¢åŠ ä¸€ä¸ªè¿”å›æŒ‰é’®
+1. é¦–å…ˆè¦æœ‰ä¸€ä¸ª parentActivity ï¼ˆè¿™æ ·æŒ‰äº†è¿”å›æŒ‰é’®æ‰æœ‰å»å¤„ï¼‰ã€‚   
 
-2. ÔÚ AndroidManifest.xml ÖĞÉùÃ÷×Ó»î¶¯µÄ¸¸»î¶¯ÊÇË­£¬ÈçÏÂ£º   
+2. åœ¨ AndroidManifest.xml ä¸­å£°æ˜å­æ´»åŠ¨çš„çˆ¶æ´»åŠ¨æ˜¯è°ï¼Œå¦‚ä¸‹ï¼š   
 	![mf.PNG](https://ooo.0o0.ooo/2017/03/19/58ce3ea9970e0.png)     
 	
-3. ÔÚ×Ó»î¶¯µÄ onCreate ·½·¨ÀïÉèÖÃÏÔÊ¾·µ»Ø°´Å¥£º   
-	![up.PNG](https://ooo.0o0.ooo/2017/03/19/58ce3f73ec356.png)   
+3. åœ¨å­æ´»åŠ¨çš„ onCreate æ–¹æ³•é‡Œè®¾ç½®æ˜¾ç¤ºè¿”å›æŒ‰é’®ï¼š   
+	```java
+	    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        // è·å¾—ActionBarçš„å¯¹è±¡
+        ActionBar ab = getSupportActionBar();
+        // å¢åŠ ä¸€ä¸ªupæŒ‰é’®
+        ab.setDisplayHomeAsUpEnabled(true);
+	```
+
 	
-4. Èç´Ë¾ÍÊµÏÖÁË·µ»Ø°´Å¥¹¦ÄÜÀ²¡£   
+	
+4. å¦‚æ­¤å°±å®ç°äº†è¿”å›æŒ‰é’®åŠŸèƒ½å•¦ã€‚   
 
 
 
-### Èı¡¢×Ô¶¨Òå toolbar £¨×ó±ßÒ»¸ö·µ»Ø°´Å¥£¬ÖĞ¼äÏÔÊ¾±êÌâ£©
+### ä¸‰ã€è‡ªå®šä¹‰ toolbar ï¼ˆå·¦è¾¹ä¸€ä¸ªè¿”å›æŒ‰é’®ï¼Œä¸­é—´æ˜¾ç¤ºæ ‡é¢˜ï¼‰
 
-1. ÔÚ layout ÖĞÔö¼ÓÒ»¸ö toolbar.xml £¬Ôö¼ÓÒ»¸ö TextView ¡£ÄÚÈİÈçÏÂ£º  
+1. åœ¨ layout ä¸­å¢åŠ ä¸€ä¸ª toolbar.xml ï¼Œå¢åŠ ä¸€ä¸ª TextView ã€‚å†…å®¹å¦‚ä¸‹ï¼š  
 	![toolbar_xml.PNG](https://ooo.0o0.ooo/2017/03/19/58ce4933cf740.png)   
 
-2. Ôö¼ÓÒ»¸ö²¼¾ÖÎÄ¼ş activity_classification.xml £¬ÒıÈë toolbar µÄ²¼¾Ö£º   
+2. å¢åŠ ä¸€ä¸ªå¸ƒå±€æ–‡ä»¶ activity_classification.xml ï¼Œå¼•å…¥ toolbar çš„å¸ƒå±€ï¼š   
 	![include.PNG](https://ooo.0o0.ooo/2017/03/19/58ce495d2cfb9.png)   
 
-3. ´´½¨Ò»¸ö BaseToolbarActivity ×÷Îª¸¸Àà,ÉèÖÃ²»ÏÔÊ¾Ä¬ÈÏ±êÌâ£¬ÏÔÊ¾·µ»Ø°´Å¥;´´½¨Ò»¸ö toolbar µÄ°ïÖúÀà£º  
-	![baseactivity.PNG](https://ooo.0o0.ooo/2017/03/19/58ce4989ccb44.png)   
-	![helper.PNG](https://ooo.0o0.ooo/2017/03/19/58ce44f4d961a.png)   
+3. åˆ›å»ºä¸€ä¸ª BaseToolbarActivity ä½œä¸ºçˆ¶ç±»,è®¾ç½®ä¸æ˜¾ç¤ºé»˜è®¤æ ‡é¢˜ï¼Œæ˜¾ç¤ºè¿”å›æŒ‰é’®;åˆ›å»ºä¸€ä¸ª toolbar çš„å¸®åŠ©ç±»ï¼š  
+	```java
+	package team.xinfe.shiyu.ui;
 
-4. ´´½¨Ò»¸ö¼Ì³Ğ BaseToolbarActivity µÄ×ÓÀà ClassificationActivity £¬ÖØĞ´·½·¨£º   
-	![¼Ì³ĞµÄ×Ó»î¶¯.PNG](https://ooo.0o0.ooo/2017/03/19/58ce49a172b79.png)   
+	import android.os.Bundle;
+	import android.support.annotation.Nullable;
+	import android.support.v7.app.ActionBar;
+	import android.support.v7.app.AppCompatActivity;
+	import android.support.v7.widget.Toolbar;
+	import android.util.Log;
+	import android.widget.TextView;
 
-5. ÔÚÇåµ¥ÎÄ¼şÖĞÉùÃ÷£¨ÊµÏÖÔÚ ClassificationActivity µã»÷·µ»Ø°´Å¥»Øµ½ MainActivity£©£º   
+	import team.xinfe.shiyu.R;
+
+	/**
+	 * æä¾›åŸºç¡€çš„toolbar
+	 * Created by xinfe on 2017/3/19.
+	 */
+
+	public class BaseToolBarActivity extends AppCompatActivity {
+
+		private static final String TAG = "BaseToolBarActivity";
+
+		@Override
+		protected void onCreate(@Nullable Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			Log.d("shiyu",TAG+"onCreate");
+			Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+			if (toolbar != null) {
+				setSupportActionBar(toolbar);
+				// è·å¾—ActionBarçš„å¯¹è±¡
+				ActionBar ab = getSupportActionBar();
+				// å¢åŠ ä¸€ä¸ªupæŒ‰é’®
+				ab.setDisplayHomeAsUpEnabled(true);
+				// éšè—æ ‡é¢˜
+				ab.setDisplayShowTitleEnabled(false);
+				ToolbarHelper toolbarHelper = new ToolbarHelper(toolbar);
+				handleToolbar(toolbarHelper);
+			}
+		}
+
+		//ç”±ç»§æ‰¿è¯¥æ´»åŠ¨çš„å­æ´»åŠ¨å®Œæˆå¤„ç†åŠŸèƒ½
+		protected void handleToolbar(ToolbarHelper toolbarHelper) {}
+
+		//toolbarå¸®åŠ©ç±»
+		public class ToolbarHelper {
+
+			private Toolbar mToolbar;
+
+			ToolbarHelper(Toolbar toolbar) {
+				this.mToolbar = toolbar;
+			}
+			public Toolbar getToolbar() {
+				return mToolbar;
+			}
+			public void setTitle(String title) {
+				TextView tvTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+				tvTitle.setText(title);
+			}
+		}
+	}
+	```
+  
+
+4. åˆ›å»ºä¸€ä¸ªç»§æ‰¿ BaseToolbarActivity çš„å­ç±» ClassificationActivity ï¼Œé‡å†™æ–¹æ³•ï¼š      
+	```java
+	package team.xinfe.shiyu.ui;
+
+	import android.os.Bundle;
+	import android.util.Log;
+
+	import team.xinfe.shiyu.R;
+
+	/**
+	 * åˆ†ç±»
+	 * Created by xinfe on 2017/3/19.
+	 */
+
+	public class ClassificationActivity extends BaseToolBarActivity {
+		private static final String TAG = "ClassificationActivity";
+
+		@Override
+		protected void onCreate(Bundle savedInstanceState) {
+			//å…ˆè®¾ç½®ContentViewï¼Œå†è°ƒç”¨çˆ¶ç±»onCreateï¼Œä¸ç„¶çˆ¶ç±»æ‰¾ä¸åˆ°toolbarçš„id
+			setContentView(R.layout.activity_classification);
+			super.onCreate(savedInstanceState);
+			Log.d("shiyu",TAG+"onCreate");
+
+		}
+
+		//é‡å†™çˆ¶ç±»çš„handleToolbaræ–¹æ³•
+		protected void handleToolbar(ToolbarHelper toolbarHelper) {
+			Log.d("shiyu",TAG+"handleToolbar");
+			toolbarHelper.setTitle("åˆ†ç±»");
+		}
+	}
+	```
+	  
+
+5. åœ¨æ¸…å•æ–‡ä»¶ä¸­å£°æ˜ï¼ˆå®ç°åœ¨ ClassificationActivity ç‚¹å‡»è¿”å›æŒ‰é’®å›åˆ° MainActivityï¼‰ï¼š   
 	![up.PNG](https://ooo.0o0.ooo/2017/03/19/58ce49bc77006.png)
 
-6. Ğ§¹û£º   
+6. æ•ˆæœï¼š   
 	![home.png](https://ooo.0o0.ooo/2017/03/19/58ce4e0fe52a5.png)   
 	![ClassificationActivity.png](https://ooo.0o0.ooo/2017/03/19/58ce4e2c73dda.png)   
 
-### ²Î¿¼×ÊÁÏ
-[Android Developers](https://developer.android.com/training/appbar/setting-up.html)   
-[ToolbarÊ¹ÓÃÏê½â](http://www.jianshu.com/p/b3a40a55826e)
+### å‚è€ƒèµ„æ–™
+- [Android Developers](https://developer.android.com/training/appbar/setting-up.html)   
+- [Toolbarä½¿ç”¨è¯¦è§£](http://www.jianshu.com/p/b3a40a55826e)
 
 ***
