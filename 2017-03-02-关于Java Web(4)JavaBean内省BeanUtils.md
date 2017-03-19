@@ -1,51 +1,51 @@
 *author : xinfe*   
 *date : 2017-03-02*
 ***
-# ¹ØÓÚJava Web(4)JavaBean¡¢ÄÚÊ¡¡¢BeanUtils
+# å…³äºJava Web(4)JavaBeanã€å†…çœã€BeanUtils
 
 
-### Ò»¡¢javaBean 
+### ä¸€ã€javaBean 
 
-javaBeanÊÇÌØÊâµÄjavaÀà£¬ÌØÊâÔÚ£º  
-- Àà±ØĞëÊÇ¹«¿ªµÄ¡¢¾ßÌåµÄ 
-- ±ØĞëÓĞÒ»¸öÄ¬ÈÏµÄÎŞ²Î¹¹Ôìº¯Êı
-- ×Ö¶ÎÊÇË½ÓĞµÄ
-- ·½·¨Ãû·ûºÏÒ»¶¨µÄ¹æÔò£¨getXxx£¬setXxx£©
+javaBeanæ˜¯ç‰¹æ®Šçš„javaç±»ï¼Œç‰¹æ®Šåœ¨ï¼š  
+- ç±»å¿…é¡»æ˜¯å…¬å¼€çš„ã€å…·ä½“çš„ 
+- å¿…é¡»æœ‰ä¸€ä¸ªé»˜è®¤çš„æ— å‚æ„é€ å‡½æ•°
+- å­—æ®µæ˜¯ç§æœ‰çš„
+- æ–¹æ³•åç¬¦åˆä¸€å®šçš„è§„åˆ™ï¼ˆgetXxxï¼ŒsetXxxï¼‰
 	
-¾ÙÀı£º
-```
+ä¸¾ä¾‹ï¼š
+```java
 public class User
 {
-    private String name;					//Ë½ÓĞ
-    private int age;						//Ë½ÓĞ
-	private Date birthday;					//Ë½ÓĞ	
+    private String name;					//ç§æœ‰
+    private int age;						//ç§æœ‰
+	private Date birthday;					//ç§æœ‰	
 	
-    public String getName()					//»ñµÃĞÕÃû
+    public String getName()					//è·å¾—å§“å
     {
         return name;
     }
 	
-    public void setName(String name)		//ÉèÖÃĞÕÃû
+    public void setName(String name)				//è®¾ç½®å§“å
     {
         this.name = name;
     }
 	
-    public int getAge()						//»ñÈ¡ÄêÁä
+    public int getAge()						//è·å–å¹´é¾„
     {
         return age;
     }
 	
-	public void setAge(int age)				//ÉèÖÃÄêÁä
+	public void setAge(int age)				//è®¾ç½®å¹´é¾„
     {
         this.age = age;
     }
 	
-	public Date getBirthday()				//»ñÈ¡ÉúÈÕ
+	public Date getBirthday()				//è·å–ç”Ÿæ—¥
     {
         return birthday;
     }
 	
-    public void setBirthday(Date birthday)	//ÉèÖÃÉúÈÕ
+    public void setBirthday(Date birthday)			//è®¾ç½®ç”Ÿæ—¥
     {
         this.birthday = birthday;
     }
@@ -56,66 +56,66 @@ public class User
 
 
 
-### ¶ş¡¢ÄÚÊ¡(Introspector)
+### äºŒã€å†…çœ(Introspector)
   
-ÄÚÊ¡ÔÚWikiÉÏÕâÑù½âÊÍ£º  
-> ÔÚ¼ÆËã»ú¿ÆÑ§ÖĞ£¬ÄÚÊ¡ÊÇÖ¸¼ÆËã»ú³ÌĞòÔÚÔËĞĞÊ±¼ì²é¶ÔÏóÀàĞÍµÄÒ»ÖÖÄÜÁ¦£¬Í¨³£Ò²¿ÉÒÔ³Æ×÷ÔËĞĞÊ±ÀàĞÍ¼ì²é¡£²»Ó¦¸Ã½«ÄÚÊ¡ºÍ·´Éä»ìÏı¡£
-> Ïà¶ÔÓÚÄÚÊ¡£¬·´Éä¸ü½øÒ»²½£¬ÊÇÖ¸¼ÆËã»ú³ÌĞòÔÚÔËĞĞÊ±¿ÉÒÔ·ÃÎÊ¡¢¼ì²âºÍĞŞ¸ÄËü±¾Éí×´Ì¬»òĞĞÎªµÄÒ»ÖÖÄÜÁ¦¡£
+å†…çœåœ¨Wikiä¸Šè¿™æ ·è§£é‡Šï¼š  
+> åœ¨è®¡ç®—æœºç§‘å­¦ä¸­ï¼Œå†…çœæ˜¯æŒ‡è®¡ç®—æœºç¨‹åºåœ¨è¿è¡Œæ—¶æ£€æŸ¥å¯¹è±¡ç±»å‹çš„ä¸€ç§èƒ½åŠ›ï¼Œé€šå¸¸ä¹Ÿå¯ä»¥ç§°ä½œè¿è¡Œæ—¶ç±»å‹æ£€æŸ¥ã€‚ä¸åº”è¯¥å°†å†…çœå’Œåå°„æ··æ·†ã€‚
+> ç›¸å¯¹äºå†…çœï¼Œåå°„æ›´è¿›ä¸€æ­¥ï¼Œæ˜¯æŒ‡è®¡ç®—æœºç¨‹åºåœ¨è¿è¡Œæ—¶å¯ä»¥è®¿é—®ã€æ£€æµ‹å’Œä¿®æ”¹å®ƒæœ¬èº«çŠ¶æ€æˆ–è¡Œä¸ºçš„ä¸€ç§èƒ½åŠ›ã€‚
 
-»¹²»ÊÇºÜÀí½â£¬ÔİÊ±Ö»ÖªµÀÊÇÓÃÀ´´¦ÀíjavaBeanµÄÊôĞÔµÄ¡£  
-ÏÂÃæ¾ÍÓÃ¾ßÌåÀı×ÓÊ¾·¶Ò»ÏÂ£º  
-```
-PropertyDescriptor pd = new PropertyDescriptor("name",User.class);	//ĞÂ½¨Ò»¸öÊôĞÔÃèÊöÆ÷¶ÔÏó(²ÎÊıÒ»£ºÊôĞÔÃû£¬²ÎÊı¶ş£ºbeanClass)
-Method method = pd.getWriteMethod();								//»ñµÃ¸ÃÊôĞÔµÄĞ´·½·¨(¼´setXXX·½·¨)
+è¿˜ä¸æ˜¯å¾ˆç†è§£ï¼Œæš‚æ—¶åªçŸ¥é“æ˜¯ç”¨æ¥å¤„ç†javaBeançš„å±æ€§çš„ã€‚  
+ä¸‹é¢å°±ç”¨å…·ä½“ä¾‹å­ç¤ºèŒƒä¸€ä¸‹ï¼š  
+```java
+PropertyDescriptor pd = new PropertyDescriptor("name",User.class);	//æ–°å»ºä¸€ä¸ªå±æ€§æè¿°å™¨å¯¹è±¡(å‚æ•°ä¸€ï¼šå±æ€§åï¼Œå‚æ•°äºŒï¼šbeanClass)
+Method method = pd.getWriteMethod();					//è·å¾—è¯¥å±æ€§çš„å†™æ–¹æ³•(å³setXXXæ–¹æ³•)
 User user = new User();
-method.invoke(user,"xinfe");										//µ÷ÓÃ¸Ã·½·¨(²ÎÊıÒ»£º¶ÔÏó£¬²ÎÊı¶ş£º´«ÈëµÄÖµ)
+method.invoke(user,"xinfe");						//è°ƒç”¨è¯¥æ–¹æ³•(å‚æ•°ä¸€ï¼šå¯¹è±¡ï¼Œå‚æ•°äºŒï¼šä¼ å…¥çš„å€¼)
 
-method = pd.getReadMethod();										//»ñµÃ¸ÃÊôĞÔµÄ¶Á·½·¨(¼´getXXX·½·¨)
-System.out.println(method.invoke(user,null));						//´òÓ¡½á¹ûÎªxinfe
+method = pd.getReadMethod();						//è·å¾—è¯¥å±æ€§çš„è¯»æ–¹æ³•(å³getXXXæ–¹æ³•)
+System.out.println(method.invoke(user,null));				//æ‰“å°ç»“æœä¸ºxinfe
 ```
 
-ÓëÄÚÊ¡Ïà¹ØµÄÀàÖ÷ÒªÓĞ£ºIntrospector,BeanInfo,PropertyDescriptorµÈ¡£
+ä¸å†…çœç›¸å…³çš„ç±»ä¸»è¦æœ‰ï¼šIntrospector,BeanInfo,PropertyDescriptorç­‰ã€‚
 
 
 
 
 
-### Èı¡¢BeanUtils
-ÓÉÓÚÄÚÊ¡±È½Ï¸´ÔÓ£¬ËùÒÔ¿ÉÒÔÒıÈëµÚÈı·½jar°üBeanUtils£¬À´²Ù×÷javabeanµÄÊôĞÔ¡£    
-´Ëjar°üÊÇÓÉApache¿ª·¢µÄ£¬»¹ĞèÒªcommons-logging.jarµÄÖ§³Ö¡£  
-ËùÒÔÊ¹ÓÃBeanUtils¾ÍĞèÒª½«Á½¸öjar°ü¶¼Add to Build Path¡£  
-```
+### ä¸‰ã€BeanUtils
+ç”±äºå†…çœæ¯”è¾ƒå¤æ‚ï¼Œæ‰€ä»¥å¯ä»¥å¼•å…¥ç¬¬ä¸‰æ–¹jaråŒ…BeanUtilsï¼Œæ¥æ“ä½œjavabeançš„å±æ€§ã€‚    
+æ­¤jaråŒ…æ˜¯ç”±Apacheå¼€å‘çš„ï¼Œè¿˜éœ€è¦commons-logging.jarçš„æ”¯æŒã€‚  
+æ‰€ä»¥ä½¿ç”¨BeanUtilså°±éœ€è¦å°†ä¸¤ä¸ªjaråŒ…éƒ½Add to Build Pathã€‚  
+```java
 User user = new User();
 
-String name = BeanUtils.getProperty(user,"name");		//static String 	getProperty(Object bean, String name)
+String name = BeanUtils.getProperty(user,"name");	//static String 	getProperty(Object bean, String name)
 
 
-String age = "21";										//¼ÙÉè´ËÊı¾İ´Ó±íµ¥ÖĞ»ñµÃ£¬ÀàĞÍÎªString
-BeanUtils.setProperty(user, "age", age);				//static void 	setProperty(Object bean, String name, Object value)
-														//Ö»Ö§³Ö»ù±¾Êı¾İÀàĞÍµÄ×ª»»
+String age = "21";					//å‡è®¾æ­¤æ•°æ®ä»è¡¨å•ä¸­è·å¾—ï¼Œç±»å‹ä¸ºString
+BeanUtils.setProperty(user, "age", age);		//static void 	setProperty(Object bean, String name, Object value)
+							//åªæ”¯æŒåŸºæœ¬æ•°æ®ç±»å‹çš„è½¬æ¢
 
 
-String birthday = "1996-01-01";							//Òª×ª»»³ÉDateÀàĞÍ£¬²»Ö§³Ö£¬ĞèÒª×¢²á×ª»»Æ÷
+String birthday = "1996-01-01";				//è¦è½¬æ¢æˆDateç±»å‹ï¼Œä¸æ”¯æŒï¼Œéœ€è¦æ³¨å†Œè½¬æ¢å™¨
 DateConverter converter = new DateConverter();
 converter.setPatterns(new String[]{"yyyy-MM-dd","yyyyMMdd","MM/dd/yyyy"});
-ConvertUtils.register(converter, Date.class);			//static void 	register(Converter converter, Class<?> clazz)
+ConvertUtils.register(converter, Date.class);		//static void 	register(Converter converter, Class<?> clazz)
 BeanUtils.setProperty(user, "birthday", birthday);
 
 
 Map map = new HashMap();
 map.put("name","xinfe");
 map.put("age","21");
-BeanUtils.populate(user,map);							//static void 	populate(Object bean, Map<String,? extends Object> properties)
+BeanUtils.populate(user,map);				//static void 	populate(Object bean, Map<String,? extends Object> properties)
 ```
 
 
 
 
 
-### ²Î¿¼×ÊÁÏ
-[Andye - javabeanÒÔ¼°ÄÚÊ¡¼¼ÊõÏê½â](http://www.cnblogs.com/yejiurui/archive/2012/10/06/2712693.html)   
-[zhengxinzhi's blog - JavaÄÚÊ¡Ïê½â](http://blog.csdn.net/u014394715/article/details/51217821)   
-[BeanUtils API](http://commons.apache.org/proper/commons-beanutils/javadocs/v1.9.3/apidocs/index.html)
+### å‚è€ƒèµ„æ–™
+- [Andye - javabeanä»¥åŠå†…çœæŠ€æœ¯è¯¦è§£](http://www.cnblogs.com/yejiurui/archive/2012/10/06/2712693.html)   
+- [zhengxinzhi's blog - Javaå†…çœè¯¦è§£](http://blog.csdn.net/u014394715/article/details/51217821)   
+- [BeanUtils API](http://commons.apache.org/proper/commons-beanutils/javadocs/v1.9.3/apidocs/index.html)
 
 
 ***
