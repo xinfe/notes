@@ -4,12 +4,9 @@
 # 关于Android(6)GalleryFinal和Glide的基础使用
 
 ### 效果：   
-**点击图中加号**   
-![添加.png](https://ooo.0o0.ooo/2017/04/06/58e65f5644844.png)  
-**选择图片（最多选择九张）**   
-![选择.png](https://ooo.0o0.ooo/2017/04/06/58e65f58277f4.png)   
-**显示在指定地点**   
-![显示.png](https://ooo.0o0.ooo/2017/04/06/58e65f5861355.png)   
+![添加.png](https://ooo.0o0.ooo/2017/04/06/58e660377ed33.png)
+![选择.png](https://ooo.0o0.ooo/2017/04/06/58e660385780e.png)
+![显示.png](https://ooo.0o0.ooo/2017/04/06/58e660381ec64.png)   
 
 
 ### 使用的技术：
