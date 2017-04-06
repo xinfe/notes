@@ -5,11 +5,11 @@
 
 ### 效果：   
 **点击图中加号**   
-![点击加号.png](https://ooo.0o0.ooo/2017/04/06/58e647b9f3c5d.png)  
+![添加.png](https://ooo.0o0.ooo/2017/04/06/58e65f5644844.png)  
 **选择图片（最多选择九张）**   
-![选择图片.png](https://ooo.0o0.ooo/2017/04/06/58e65991bfad1.png)   
+![选择.png](https://ooo.0o0.ooo/2017/04/06/58e65f58277f4.png)   
 **显示在指定地点**   
-![显示图片.png](https://ooo.0o0.ooo/2017/04/06/58e6598f3ee4a.png)   
+![显示.png](https://ooo.0o0.ooo/2017/04/06/58e65f5861355.png)   
 
 
 ### 使用的技术：
