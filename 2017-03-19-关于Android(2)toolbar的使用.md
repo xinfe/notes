@@ -112,7 +112,7 @@
 	整理一下，我们要有一个父活动和一个子活动 ，点击子活动中 toolbar 上的 up 按钮，返回到父活动。    
 	在子活动的布局界面中添加一个 Toolbar ，和上面代码一样。     
 	在子活动中：
-	```
+	```java
 	@Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
