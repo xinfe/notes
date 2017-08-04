@@ -110,9 +110,9 @@ isNaN()和Number.isNaN()区别在于前者只能判断是不是数字，后者�
 
 
 ### 参考          
-![NaN - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN)           
-![Number.NaN - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NaN)            
-![为什么NaN不等于自己](http://www.cnblogs.com/onepixel/p/5281796.html)         
-![对属性NaN的理解纠正和对Number.isNaN() 、isNaN()方法的辨析](http://www.cnblogs.com/Spring-Rain/p/5722594.html)        
+[NaN - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN)           
+[Number.NaN - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NaN)            
+[为什么NaN不等于自己](http://www.cnblogs.com/onepixel/p/5281796.html)         
+[对属性NaN的理解纠正和对Number.isNaN() 、isNaN()方法的辨析](http://www.cnblogs.com/Spring-Rain/p/5722594.html)        
 
 ***
