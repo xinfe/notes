@@ -309,6 +309,6 @@ js的内置对象有很多很多，常用的有以下几个：Array，Date，Fun
     ![String.PNG](https://i.loli.net/2017/07/13/59676c9aed024.png)    
 
 ### 参考      
-![javascript-MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)     
+[javascript-MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)     
 
 ***
