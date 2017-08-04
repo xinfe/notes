@@ -56,7 +56,7 @@ js的数据类型有7种：undefined，null，number，string，boolean，symbol
 >在 JavaScript 最初的实现中，JavaScript 中的值是由一个表示类型的标签和实际数据值表示的。对象的类型标签是0。由于 null 代表的是空指针(大多数平台下值为0x00)，因此，null的类型标签也成为了0，typeof null就错误的返回了"object".
 >该现象有待于在ECMAScript 6中被修复 (该提议已被否决). 正确的返回值将成为 typeof null === 'null'.
 
-参考：![typeof - JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/typeof)    
+参考：[typeof - JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/typeof)    
 
 ### 二、===与==    
 - ===：表示比较的两者必须完全相同（值和类型）。先进行类型的比较，如果类型不同，则返回false，否则，再进行值的比较。
@@ -88,6 +88,6 @@ js的数据类型有7种：undefined，null，number，string，boolean，symbol
 
 
 ### 参考
-![javascript-MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+[javascript-MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
 
 ***
